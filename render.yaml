@@ -27,5 +27,5 @@ services:
       - key: VITE_API_URL
         fromService:
           type: web
-          name: ledger-api
+          name: payment-ledger-api
           property: host
