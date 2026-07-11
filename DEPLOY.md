@@ -16,7 +16,7 @@ git init
 git add .
 git commit -m "Mini payment ledger & invoice service"
 git branch -M main
-git remote add origin https://github.com/<you>/tms-payment-ledger.git
+git remote add origin https://github.com/<you>/payment-ledger.git
 git push -u origin main
 ```
 
@@ -24,11 +24,11 @@ git push -u origin main
 
 1. Sign in at https://render.com with your GitHub account (free).
 2. **New → Blueprint**, pick this repo. Render reads `render.yaml` and proposes two
-   services: `tms-ledger-api` and `tms-ledger-web`.
+   services: `payment-ledger-api` and `payment-ledger-web`.
 3. Click **Apply**. The API builds and starts first; the static site builds after
    and picks up the API's hostname via `VITE_API_URL` automatically.
 4. When both are live you'll get two URLs. The one to share / submit as the "hosted
-   UI" is **`tms-ledger-web`** (e.g. `https://tms-ledger-web.onrender.com`).
+   UI" is **`payment-ledger-web`** (e.g. `https://payment-ledger-web.onrender.com`).
 
 That's it. Open the web URL; it talks to the API service. (First request after idle
 is slow while the API wakes — expected on the free tier.)
@@ -38,8 +38,8 @@ is slow while the API wakes — expected on the free tier.)
 Render can't always template a full `https://` URL from one service into another at
 build time. If the UI can't reach the API, set it manually:
 
-1. Copy the API URL from its Render page (e.g. `https://tms-ledger-api.onrender.com`).
-2. On the `tms-ledger-web` service → **Environment**, set
+1. Copy the API URL from its Render page (e.g. `https://payment-ledger-api.onrender.com`).
+2. On the `payment-ledger-web` service → **Environment**, set
    `VITE_API_URL` to that full URL.
 3. **Manual Deploy → Clear build cache & deploy** so the value is baked into the
    build.

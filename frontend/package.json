@@ -1,5 +1,5 @@
 {
-  "name": "tms-payment-ledger-web",
+  "name": "payment-ledger-web",
   "private": true,
   "version": "1.0.0",
   "type": "module",

@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: tms-ledger-api
+    name: payment-ledger-api
     runtime: node
     rootDir: backend
     plan: free
@@ -14,7 +14,7 @@ services:
         value: production
 
   - type: web
-    name: tms-ledger-web
+    name: payment-ledger-web
     runtime: static
     rootDir: frontend
     buildCommand: npm install && npm run build
@@ -27,5 +27,5 @@ services:
       - key: VITE_API_URL
         fromService:
           type: web
-          name: tms-ledger-api
+          name: ledger-api
           property: host

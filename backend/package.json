@@ -1,5 +1,5 @@
 {
-  "name": "tms-payment-ledger",
+  "name": "payment-ledger",
   "version": "1.0.0",
   "description": "Mini payment ledger and invoice service",
   "type": "module",
