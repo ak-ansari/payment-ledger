@@ -1,4 +1,9 @@
-const BASE = import.meta.env.VITE_API_URL ?? "http://localhost:3000";
+const configured = import.meta.env.VITE_API_URL;
+const BASE = configured
+  ? configured.startsWith("http")
+    ? configured
+    : `https://${configured}`
+  : "http://localhost:3000";
 
 async function req(path: string, options?: RequestInit) {
   const res = await fetch(BASE + path, {
