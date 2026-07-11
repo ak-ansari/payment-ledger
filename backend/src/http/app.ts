@@ -18,6 +18,15 @@ export function createApp(db: DB): Express {
   });
   app.options("*", (_req, res) => res.sendStatus(204));
 
+  app.get("/", (_req, res) => {
+    res.json({
+      service: "payment-ledger-api",
+      status: "ok",
+      endpoints: ["/health", "/accounts", "/transactions", "/invoices"],
+      note: "This is the API. The UI is served separately.",
+    });
+  });
+
   app.get("/health", (_req, res) => {
     res.json({ ok: true, systemBalanceCents: systemBalance(db), systemAccounts: SYSTEM_ACCOUNTS });
   });
